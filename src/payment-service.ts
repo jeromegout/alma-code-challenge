@@ -2,8 +2,10 @@ import { Payment } from "./types/Payment";
 
 const BASE_API_URL = "https://cloudrun-frontend-recruitment-test-5hhyjiivra-ew.a.run.app";
 
+const paymentSorter = (a: Payment, b: Payment): number => a.created - b.created;
+
 const getMerchantPaymentsOnly = (merchant: string, data: Payment[]): Payment[] => {
-  return data.filter((datum) => datum.merchant.name === merchant);
+  return data.filter((datum) => datum.merchant.name === merchant).sort(paymentSorter);
 };
 
 export const getAllPayments = (merchant: string): Promise<Payment[]> => {

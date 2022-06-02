@@ -29,11 +29,11 @@ const GradientAvatar = ({ name, size, style }: IProps) => {
     >
       <defs>
         <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id={id}>
-          <stop stop-color={color1str} offset="0%"></stop>
-          <stop stop-color={color2str} offset="100%"></stop>
+          <stop stopColor={color1str} offset="0%"></stop>
+          <stop stopColor={color2str} offset="100%"></stop>
         </linearGradient>
       </defs>
-      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <circle cx="50" cy="50" r="50" id="circle" fill={`url(#${id})`}></circle>
       </g>
       <text
@@ -49,7 +49,7 @@ const GradientAvatar = ({ name, size, style }: IProps) => {
         alignmentBaseline="middle"
         textAnchor="middle"
         dy=".1em"
-        dominant-baseline="middle"
+        dominantBaseline="middle"
         fill="#ffffff"
       >
         {getAvatarLetters(name)}

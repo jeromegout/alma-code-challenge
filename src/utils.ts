@@ -61,10 +61,14 @@ export const getColorByStatus = (status: PaymentStatus): string => {
 
 export const getReadableStatus = (status: PaymentStatus): string => {
   if (status === "ready") return "Ready";
-  if (status === "paid") return "Piad";
+  if (status === "paid") return "Paid";
   if (status === "not_started") return "Not started";
   if (status === "in_progress") return "In progress";
   else return "Default";
+};
+
+export const getAllPaymentStatus = (): PaymentStatus[] => {
+  return ["default", "in_progress", "not_started", "paid", "ready"];
 };
 
 export const getPaidIndex = (plans: PaymentPlan[] = []): number => {
