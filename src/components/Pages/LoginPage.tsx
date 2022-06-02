@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Group, TextInput, useMantineTheme } from "@mantine/core";
+import { Box, Button, Center, Checkbox, Group, TextInput, useMantineTheme } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { MERCHANT_KEY, useAuth } from "../../contexts/AuthContext";
 import AlmaLogo from "../AlmaLogo";
@@ -53,17 +53,18 @@ const LoginPage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: "150px",
       }}
     >
       {logo}
-      <Box sx={{ maxWidth: 300 }} mx="auto">
+      <Box sx={{ maxWidth: 300 }}>
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <TextInput required label="Name" placeholder="Merchant name" {...form.getInputProps("name")} />
           <Checkbox mt="md" label="Remember me" {...form.getInputProps("remember", { type: "checkbox" })} />
-          <Button style={{ position: "absolute", bottom: "50px", left: "calc(50% - 50px)" }} type="submit">
-            Submit
-          </Button>
+          <Center>
+            <Button mt="20%" type="submit">
+              Submit
+            </Button>
+          </Center>
         </form>
       </Box>
     </div>
@@ -82,10 +83,13 @@ const LoginPage = () => {
       <div
         style={{
           position: "relative",
-          width: "45%",
+          width: "100%",
+          minWidth: "300px",
+          maxWidth: "500px",
           height: "60%",
           display: "flex",
           flexDirection: "column",
+          justifyContent: "center",
           border: `1px solid ${theme.colors.gray[4]}`,
           borderRadius: "7px",
           boxShadow: `3px 3px 15px 2px ${
