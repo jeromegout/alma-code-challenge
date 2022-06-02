@@ -15,7 +15,7 @@ const AboutPage = () => {
       }}
     >
       <Text size="xs" color="dimmed" style={{ position: "absolute", right: "20px" }}>
-        2022 June
+        June 2022
       </Text>
       <GradientAvatar name={"Jerome Gout"} size={80} style={{ position: "absolute", bottom: "-35px" }} />
     </div>
@@ -27,7 +27,7 @@ const AboutPage = () => {
         Jérôme Gout
       </Text>
       <Text weight={400} mt="30px" style={{ fontSize: "40px" }}>
-        Alma Dashboard
+        Dashboard
       </Text>
 
       <Text size="md" style={{ position: "absolute", right: "20px", bottom: "20px" }}>
