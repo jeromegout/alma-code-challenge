@@ -1,10 +1,26 @@
+import { ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core";
+import { useColorScheme } from "@mantine/hooks";
 import { useState } from "react";
-import "./App.css";
+
+import HomePage from "./components/Pages/HomePage";
+import LoginPage from "./components/Pages/LoginPage";
+import { useAuth } from "./contexts/AuthContext";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const preferredColorScheme = useColorScheme();
+  const [colorScheme, setColorScheme] = useState<ColorScheme>(preferredColorScheme);
 
-  return <div className="App">Hello!</div>;
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+
+  const { user } = useAuth();
+  return (
+    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+      <MantineProvider theme={{ colorScheme, fontFamily: "Poppins, sans-serif" }} withGlobalStyles withNormalizeCSS>
+        {user ? <HomePage /> : <LoginPage />}
+      </MantineProvider>
+    </ColorSchemeProvider>
+  );
 }
 
 export default App;
