@@ -27,11 +27,11 @@ export const hslCouple = (h: number, s: number, l: number) => {
   ];
 };
 
-export const hsl2rgb = (h: number, s: number, l: number) => {
-  const buildRGB = (r: number, g: number, b: number, m: number) => {
-    return [(r + m) * 255, (g + m) * 255, (b + m) * 255];
-  };
+const buildRGB = (r: number, g: number, b: number, m: number) => {
+  return [(r + m) * 255, (g + m) * 255, (b + m) * 255];
+};
 
+export const hsl2rgb = (h: number, s: number, l: number) => {
   const C = (1 - Math.abs(2 * l - 1)) * s;
   const X = C * (1 - Math.abs(((h / 60) % 2) - 1));
   const m = l - C / 2;
@@ -52,19 +52,33 @@ export const hsl2rgb = (h: number, s: number, l: number) => {
 };
 
 export const getColorByStatus = (status: PaymentStatus): string => {
-  if (status === "ready") return "green";
-  if (status === "paid") return "violet";
-  if (status === "not_started") return "red";
-  if (status === "in_progress") return "yellow";
-  else return "gray";
+  switch (status) {
+    case "ready":
+      return "green";
+    case "paid":
+      return "violet";
+    case "not_started":
+      return "red";
+    case "in_progress":
+      return "yellow";
+    default:
+      return "gray";
+  }
 };
 
 export const getReadableStatus = (status: PaymentStatus): string => {
-  if (status === "ready") return "Ready";
-  if (status === "paid") return "Paid";
-  if (status === "not_started") return "Not started";
-  if (status === "in_progress") return "In progress";
-  else return "Default";
+  switch (status) {
+    case "ready":
+      return "Ready";
+    case "paid":
+      return "Paid";
+    case "not_started":
+      return "Not started";
+    case "in_progress":
+      return "In progress";
+    default:
+      return "Default";
+  }
 };
 
 export const getAllPaymentStatus = (): PaymentStatus[] => {

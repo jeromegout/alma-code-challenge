@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext } from "react";
 import fakeAuthProvider from "../auth/auth";
 import { useLocalStorage } from "@mantine/hooks";
 
@@ -18,14 +18,14 @@ const AuthProvider = ({ children }: { children: ReactNode }): JSX.Element => {
     defaultValue: "",
   });
 
-  const login = (newUser: string, callback: () => void) => {
+  const login = (newUser: string, callback: VoidFunction) => {
     return fakeAuthProvider.login(() => {
       setUser(newUser);
       callback();
     });
   };
 
-  const logout = (callback: () => void) => {
+  const logout = (callback: VoidFunction) => {
     return fakeAuthProvider.logout(() => {
       setUser(undefined);
       callback();

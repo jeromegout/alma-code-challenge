@@ -1,11 +1,7 @@
-import { Box, Button, Center, Checkbox, Group, TextInput, useMantineTheme } from "@mantine/core";
+import { Box, Button, Center, Checkbox, TextInput, useMantineTheme } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { MERCHANT_KEY, useAuth } from "../../contexts/AuthContext";
 import AlmaLogo from "../AlmaLogo";
-
-interface stateType {
-  from: { pathname: string };
-}
 
 const LoginPage = () => {
   const auth = useAuth();
@@ -62,7 +58,7 @@ const LoginPage = () => {
           <Checkbox mt="md" label="Remember me" {...form.getInputProps("remember", { type: "checkbox" })} />
           <Center>
             <Button mt="20%" type="submit">
-              Submit
+              Sign in
             </Button>
           </Center>
         </form>

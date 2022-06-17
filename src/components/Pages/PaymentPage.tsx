@@ -20,7 +20,7 @@ const PaymentPage = () => {
     }
   }, []);
 
-  const handlePaymentClick = (payment: Payment) => {
+  const handlePaymentClick = () => {
     navigate(`/payments`);
   };
 

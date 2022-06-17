@@ -1,5 +1,4 @@
 import { Center, Text, useMantineTheme } from "@mantine/core";
-import React from "react";
 import GradientAvatar from "../GradientAvatar";
 
 const AboutPage = () => {

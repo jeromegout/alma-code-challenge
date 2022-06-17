@@ -8,8 +8,6 @@ interface IProps {
 }
 
 const LayoutNavbar = ({ opened, setOpened }: IProps) => {
-  const theme = useMantineTheme();
-
   const renderLinks = (): JSX.Element => {
     return (
       <div>

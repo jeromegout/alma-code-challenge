@@ -1,4 +1,4 @@
-import { Group, Text, ThemeIcon, UnstyledButton, useMantineTheme } from "@mantine/core";
+import { Group, Text, UnstyledButton } from "@mantine/core";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ interface IProps {
   setOpened: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AppLink = ({ icon, color, label, to, setOpened }: IProps) => {
+const AppLink = ({ icon, label, to, setOpened }: IProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {

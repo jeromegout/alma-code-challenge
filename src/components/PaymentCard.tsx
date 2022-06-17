@@ -1,7 +1,5 @@
 import { Badge, Group, Popover, Text, Timeline, useMantineTheme } from "@mantine/core";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { GitBranch, GitCommit, GitPullRequest, MessageDots } from "tabler-icons-react";
 import { Payment, PaymentPlan } from "../types/Payment";
 import { formatAmount, formatDate, getColorByStatus, getPaidIndex, getReadableStatus } from "../utils";
 import GradientAvatar from "./GradientAvatar";
