@@ -1,4 +1,4 @@
-import { MediaQuery, Navbar, Text, useMantineTheme } from "@mantine/core";
+import { MediaQuery, Navbar, Text } from "@mantine/core";
 import { CurrencyDollar, InfoCircle } from "tabler-icons-react";
 import AppLink from "./AppLink";
 

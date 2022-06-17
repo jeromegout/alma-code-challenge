@@ -87,9 +87,8 @@ export const getAllPaymentStatus = (): PaymentStatus[] => {
 
 export const getPaidIndex = (plans: PaymentPlan[] = []): number => {
   let index = 0;
-  for (let i = 0; i < plans.length; i++) {
-    const plan = plans[i];
+  plans.forEach((plan, i) => {
     if (plan.status === "ready" || plan.status === "paid") index = i;
-  }
+  });
   return index;
 };
